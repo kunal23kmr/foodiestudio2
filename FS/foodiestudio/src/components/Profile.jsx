@@ -48,10 +48,10 @@ function Profile() {
         axios.get(`http://localhost:3001/getuser`)
             .then(res => {
                 setuser(res.data);
-                console.log('data hai: ', res.data);
+                console.log('Current user is : ', res.data);
             })
             .catch(err => {
-                console.log('Error aaya hai pro:', err);
+                console.log('Error aaya hai , user id get krne me:', err);
             });
     }); // Empty dependency array means this effect runs once when the component mounts
 

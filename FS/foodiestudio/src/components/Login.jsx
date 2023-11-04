@@ -40,6 +40,7 @@ function Login() {
             setError({ ...error, mobile_number: 'Invalid phone number!' });
         }
 
+        
         axios.post('http://localhost:3001/login', formData)
             .then(res => {
                 console.log(res)
