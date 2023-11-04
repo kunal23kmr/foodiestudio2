@@ -24,7 +24,9 @@ db.connect((err) => {
     console.log('Database is connected');
 });
 
-app.listen(3001, () => {
+const port = 5000;
+
+app.listen(port, () => {
     console.log("Server is listening on port 3001");
 });
 
