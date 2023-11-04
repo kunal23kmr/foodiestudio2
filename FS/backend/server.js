@@ -86,8 +86,8 @@ app.post('/login', (req, res) => {
             console.log('mil gya');
             // console.log(results[0].user_id);
             currentUser = results[0].user_id;
-            // return res.status(200);.json(results);
-            return res.status(200);
+            return res.status(200).json(results);
+            // return res.status(200);
         }
         console.log("baigan");
         return res.status(400).json({ message: 'Wrong phone number or, password.' });
