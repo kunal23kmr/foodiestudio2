@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
 import axios from "axios";
+import "../css/ViewProfile.css";
 
 function ViewProfile() {
     const [user, setUser] = useState({
@@ -35,9 +36,9 @@ function ViewProfile() {
     }, [id]); // Use id as a dependency to trigger the request when the parameter changes
 
     return (
-        <div>
-            <h1>View Profile</h1>
-            <p>First Name: {user.first_name}</p>
+        <div className="viewProfile-container">
+            <h1 className="viewProfile-header1">View Profile</h1>
+            <p className="para-layout">First Name: {user.first_name}</p>
             <p>Last Name: {user.last_name}</p>
             <p>Phone Number: {user.phone_number}</p>
             <p>City: {user.city}</p>
