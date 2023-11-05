@@ -24,6 +24,11 @@ function ViewProfile() {
             });
     }
 
+    const vieworder = () => {
+        console.log('clicked');
+        navigate(`/viewOrder`)
+    }
+
     const { id } = useParams();
 
     useEffect(() => {
@@ -57,7 +62,7 @@ function ViewProfile() {
                 <p>Country: {user.country}</p>
             </div>
             <div>
-                <button>View Your Order</button>
+                <button onClick={vieworder}>View Your Order</button>
                 <button onClick={logout}>Logout</button>
             </div>
         </>

@@ -140,6 +140,22 @@ app.get(`/getcartList`, (req, res) => {
     }
 })
 
+
+app.get(`/viewOrder`, (req, res) => {
+    if (currentUser !== -1) {
+        var query = 'select id from order_list where user_id = ?';//SELECT user_id FROM foodiestudio.cart;
+        db.query(query, [currentUser], (err, result) => {
+            if (err) {
+                console.error('Error:', err);
+                return res.status(500).json({ message: 'Error' });
+            }
+            return res.status(200).json(result);
+        })
+    } else {
+        return res.status(200).json({ message: 'not loged in' });
+    }
+})
+
 app.get('/viewProfile/:id', (req, res) => {
     // console.log('hi')
     const id = +req.params.id; // Access the user_id from URL parameters

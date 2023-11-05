@@ -26,7 +26,11 @@ export default function Cart() {
     }, []); // Pass an empty dependency array to run this effect only on component mount
 
     const handleClick = () => {
-        navigate(`/checkOut`);
+        if (cartList.length>0) {
+            navigate(`/checkOut`);
+        }else{
+            alert('Please add something to cart before checkout.!');
+        }
     }
 
     return (

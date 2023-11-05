@@ -14,6 +14,7 @@ import Signup from './components/Signup';
 import SingleBlog from './components/SingleBlog';
 import CheckOut from './components/CheckOut';
 import Cart from './components/Cart';
+import ViewOrder from './components/ViewOrder';
 
 function App() {
   return (<>
@@ -30,6 +31,7 @@ function App() {
       <Route path='/singleBlog/:id' element={<SingleBlog />} />
       <Route path='/checkOut' element={<CheckOut />} />
       <Route path='/cart' element={<Cart />} />
+      <Route path='/viewOrder' element={<ViewOrder />} />
     </Routes>
   </>
   );
