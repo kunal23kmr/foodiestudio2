@@ -30,8 +30,6 @@ app.listen(port, () => {
     console.log("Server is listening on port", port);
 });
 
-
-
 app.post('/signup', (req, res) => {
     const mobileNumber = req.body.mobile_number;
 

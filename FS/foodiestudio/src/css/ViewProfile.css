@@ -1,1 +1,30 @@
-/* some thing */
+/* Style the container */
+#profile-container {
+    align-items: center;
+    justify-content: center;
+    background-color: #f7f7f7;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    width: 800px;
+    height: 500px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Style the heading */z
+  h1 {
+    font-size: 50px;
+    color: #333;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+  
+  /* Style the individual profile fields */
+  p {
+    font-size: 25px;
+    margin: 10px 0;
+    text-transform: capitalize;
+  }
+  

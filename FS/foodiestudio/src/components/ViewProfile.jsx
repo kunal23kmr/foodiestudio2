@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from "axios";
-
+import "../css/ViewProfile.css";
 function ViewProfile() {
     const [user, setUser] = useState({
         first_name: '',
@@ -47,11 +47,11 @@ function ViewProfile() {
 
     return (
         <>
-            <div>
+            <div id="profile-container">
                 <h1>View Profile</h1>
-                <p>First Name: {user.first_name}</p>
-                <p>Last Name: {user.last_name}</p>
-                <p>Phone Number: {user.phone_number}</p>
+                <p>Name: {user.first_name} {user.last_name}</p>
+                <p>Phone Number: {user.phone_number}</p><br />
+                <p>---Address---</p><br />
                 <p>City: {user.city}</p>
                 <p>State: {user.state}</p>
                 <p>Country: {user.country}</p>
