@@ -10,7 +10,7 @@ function Navbar() {
     useEffect(() => {
         // Make the Axios request when the component mounts
         axios
-            .get(`http://localhost:3001/getuser`)
+            .get(`http://localhost:5000/getuser`)
             .then((res) => {
                 // Handle the response here
                 setuser(res.data);

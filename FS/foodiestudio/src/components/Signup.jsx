@@ -66,7 +66,7 @@ const Signup = () => {
         ) {
             console.log(error)
             // Sending to server implementation
-            axios.post('http://localhost:3001/signup', formData)
+            axios.post('http://localhost:5000/signup', formData)
                 .then(res => {
                     seta(true);
                     console.log('responce aaya', res);

@@ -10,13 +10,13 @@ export default function SingleBlog() {
     const navigate = useNavigate();
     const handleClick = () => {
         //adding item to the cart
-        axios.get(`http://localhost:3001/getuser`)
+        axios.get(`http://localhost:5000/getuser`)
             .then(res => {
                 // Handle the response here
                 const user_id = res.data;
                 if (user_id !== -1) {
                     //next step
-                    axios.post(`http://localhost:3001/singleBlog`,{item_id:id})
+                    axios.post(`http://localhost:5000/singleBlog`,{item_id:id})
                         .then(res => {
                             console.log('add ho gya cart me')
                         })
