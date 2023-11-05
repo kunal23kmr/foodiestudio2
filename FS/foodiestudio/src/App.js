@@ -16,7 +16,6 @@ import CheckOut from './components/CheckOut';
 import Cart from './components/Cart';
 
 function App() {
-
   return (<>
     <Navbar />
     <Routes>
@@ -29,7 +28,7 @@ function App() {
       <Route path='/login' element={<Login />} />
       <Route path='/signup' element={<Signup />} />
       <Route path='/singleBlog/:id' element={<SingleBlog />} />
-      <Route path='/checkOut/:id/:price' element={<CheckOut />} />
+      <Route path='/checkOut' element={<CheckOut />} />
       <Route path='/cart' element={<Cart />} />
     </Routes>
   </>

@@ -52,6 +52,7 @@ function Login() {
                     };
                 });
                 alert('Sucessfully Logined!');
+                window.location.reload();
                 navigate(`/viewProfile/${res.data[0].user_id}`);
             })
             .catch(err => {

@@ -7,47 +7,50 @@ import axios from 'axios';
 export default function Cart() {
     const navigate = useNavigate();
     const [cartList, setCartList] = useState([]);
+
     useEffect(() => {
-        //first get the user
+        // Fetch user and cart data
         axios.get(`http://localhost:5000/getuser`)
             .then(res => {
-                // Handle the response here
-                const user_id = res.data[0];
-                axios.get(`http://localhost:3001/getcartList`)
-                    .then(res => {
-                        setCartList(res.data)
-                    }).catch(err => {
-                        console.log('show cart m error :', err);
+                axios.get(`http://localhost:5000/getcartList`)
+                    .then(response => {
+                        setCartList(response.data);
                     })
+                    .catch(error => {
+                        console.log('show cart m error:', error);
+                    });
             })
             .catch(err => {
                 console.log('Error aaya hai pro:', err);
             });
-    })
+    }, []); // Pass an empty dependency array to run this effect only on component mount
+
     const handleClick = () => {
         navigate(`/checkOut`);
     }
+
     return (
-        <>
-            <div>
-                {cartList ?
-                    foodItems.map(item => {
-                        if (item.id in cartList) {
-                            return <div key={item.id}>
+        <div>
+            {cartList && cartList.length > 0 ? (
+                cartList.map((cartItem) => {
+                    const item = foodItems.find((foodItem) => foodItem.id === cartItem.id);
+                    if (item) {
+                        return (
+                            <div key={item.id}>
                                 <h2>{item.title}</h2>
                                 <img id="image_show" src={process.env.PUBLIC_URL + item.image} alt={item.title} />
                                 <p>Restaurant: {item.restaurant}</p>
                                 <p>Price: {item.price}</p>
                             </div>
-                        }
-                    })
-                    :
-                    <div>
-                        <h1>Your Cart is empty.</h1>
-                    </div>
-                }
-                <button onClick={() => handleClick()}>Order</button>
-            </div>
-        </>
-    )
+                        );
+                    }
+                })
+            ) : (
+                <div>
+                    <h1>Your Cart is empty.</h1>
+                </div>
+            )}
+            <button onClick={() => handleClick()}>Order</button>
+        </div>
+    );
 }

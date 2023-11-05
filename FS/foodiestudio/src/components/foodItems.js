@@ -16,7 +16,7 @@ const foodItems = [
         description: 'Description of Food Item 1.',
         restaurant: 'Kunal da Dhaba',
         image: image1,
-        price: '$10',
+        price: '10',
     },
     {
         id: 2,
@@ -24,7 +24,7 @@ const foodItems = [
         description: 'Description of Food Item 2.',
         restaurant: 'Swadeshi Bhog',
         image: image2,
-        price: '$20',
+        price: '20',
     },
     {
         id: 3,
@@ -40,7 +40,7 @@ const foodItems = [
         description: 'Description of Food Item 4.',
         restaurant: 'Fast Foodies',
         image: image3,
-        price: '$20',
+        price: '20',
     },
     {
         id: 5,
@@ -48,7 +48,7 @@ const foodItems = [
         description: 'Description of Food Item 5.',
         restaurant: 'Kunal da Dhaba',
         image: image4,
-        price: '$20',
+        price: '20',
     },
     {
         id: 6,
@@ -56,7 +56,7 @@ const foodItems = [
         description: 'Description of Food Item 6.',
         restaurant: 'Swadeshi Bhog',
         image: image5,
-        price: '$20',
+        price: '20',
     },
     {
         id: 7,
@@ -64,7 +64,7 @@ const foodItems = [
         description: 'Description of Food Item 7.',
         restaurant: 'Fast Foodies',
         image: image8,
-        price: '$20',
+        price: '20',
     },
     {
         id: 8,
@@ -72,7 +72,7 @@ const foodItems = [
         description: 'Description of Food Item 8.',
         restaurant: 'It is Chinesse Time',
         image: image9,
-        price: '$20',
+        price: '20',
     },
     {
         id: 9,
@@ -80,7 +80,7 @@ const foodItems = [
         description: 'Description of Food Item 9.',
         restaurant: 'Swadeshi Bhog',
         image: image7,
-        price: '$20',
+        price: '20',
     },
     {
         id: 10,
@@ -88,7 +88,7 @@ const foodItems = [
         description: 'Description of Food Item 10.',
         restaurant: 'Southie Eats',
         image: image10,
-        price: '$20',
+        price: '20',
     }
 ];
 

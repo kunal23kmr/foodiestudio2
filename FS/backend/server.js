@@ -27,7 +27,7 @@ db.connect((err) => {
 const port = 5000;
 
 app.listen(port, () => {
-    console.log("Server is listening on port 3001");
+    console.log("Server is listening on port", port);
 });
 
 
@@ -160,4 +160,60 @@ app.get('/viewProfile/:id', (req, res) => {
         console.log("User not found");
         return res.status(404).json({ message: 'User not found.' });
     });
+});
+
+
+app.post('/checkOut', (req, res) => {
+    if (currentUser !== -1) {
+        const querySelect = 'SELECT id FROM cart WHERE user_id = ?';
+        db.query(querySelect, [currentUser], (err, result) => {
+            if (err) {
+                console.error('Error:', err);
+                return res.status(500).json({ message: 'Error' });
+            }
+            if (result.length > 0) {
+                console.log('ok1');
+                const ids = result.map(item => item.id);
+                const queryInsert = 'INSERT INTO order_list (user_id, id) VALUES (?, ?)';
+                const insertPromises = ids.map(one_id => {
+                    return new Promise((resolve, reject) => {
+                        db.query(queryInsert, [currentUser, one_id], (err2, res2) => {
+                            if (err2) {
+                                console.log('error in adding ', err2);
+                                reject(err2);
+                            } else {
+                                console.log('done ids: ', one_id);
+                                resolve(res2);
+                            }
+                        });
+                    });
+                });
+
+                Promise.all(insertPromises)
+                    .then(() => {
+                        const queryDelete = 'DELETE FROM cart WHERE user_id = ?';
+                        console.log('ok2');
+                        db.query(queryDelete, [currentUser], (err3, res3) => {
+                            if (err3) {
+                                console.log('error in deleting ', err3);
+                                return res3.status(500).json({ message: 'Error' });
+                            } else {
+                                console.log('successfully deleted from cart and added to order_list');
+                                console.log('ok3');
+                                return res.status(200).json({ message: 'Your Order Successfully placed..!' });
+                            }
+                        });
+                    })
+                    .catch(error => {
+                        console.log('Error in one of the insert queries:', error);
+                        return res.status(500).json({ message: 'Error' });
+                    });
+            } else {
+                console.log('No rows to process.');
+                return res.status(200).json({ message: 'No items in the cart.' });
+            }
+        });
+    } else {
+        return res.status(400).json({ message: 'Not logged in' });
+    }
 });

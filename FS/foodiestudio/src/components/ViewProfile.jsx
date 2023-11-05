@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import axios from "axios";
 
 function ViewProfile() {
@@ -11,11 +11,22 @@ function ViewProfile() {
         state: '',
         country: '',
     });
+    const navigate = useNavigate();
 
-    const { id } = useParams(); // Use id to match the route parameter
+    const logout = () => {
+        axios.post(`http://localhost:5000/logout`, null)
+            .then(res => {
+                alert('Logout.');
+                navigate(`/`);
+            })
+            .catch(err => {
+                console.log('Error in logout', err);
+            });
+    }
+
+    const { id } = useParams();
 
     useEffect(() => {
-        // Use a GET request to retrieve user profile data based on the route parameter
         axios.get(`http://localhost:5000/viewProfile/${id}`)
             .then(res => {
                 console.log(res);
@@ -32,18 +43,24 @@ function ViewProfile() {
             .catch(err => {
                 console.log('Error aaya hai:', err);
             });
-    }, [id]); // Use id as a dependency to trigger the request when the parameter changes
+    }, [id]);
 
     return (
-        <div>
-            <h1>View Profile</h1>
-            <p>First Name: {user.first_name}</p>
-            <p>Last Name: {user.last_name}</p>
-            <p>Phone Number: {user.phone_number}</p>
-            <p>City: {user.city}</p>
-            <p>State: {user.state}</p>
-            <p>Country: {user.country}</p>
-        </div>
+        <>
+            <div>
+                <h1>View Profile</h1>
+                <p>First Name: {user.first_name}</p>
+                <p>Last Name: {user.last_name}</p>
+                <p>Phone Number: {user.phone_number}</p>
+                <p>City: {user.city}</p>
+                <p>State: {user.state}</p>
+                <p>Country: {user.country}</p>
+            </div>
+            <div>
+                <button>View Your Order</button>
+                <button onClick={logout}>Logout</button>
+            </div>
+        </>
     );
 }
 
