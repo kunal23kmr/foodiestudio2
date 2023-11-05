@@ -45,7 +45,7 @@ function Profile() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get(`http://localhost:3001/getuser`)
+        axios.get(`http://localhost:5000/getuser`)
             .then(res => {
                 setuser(res.data);
                 console.log('Current user is : ', res.data);

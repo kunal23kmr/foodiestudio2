@@ -9,7 +9,7 @@ export default function Cart() {
     const [cartList, setCartList] = useState([]);
     useEffect(() => {
         //first get the user
-        axios.get(`http://localhost:3001/getuser`)
+        axios.get(`http://localhost:5000/getuser`)
             .then(res => {
                 // Handle the response here
                 const user_id = res.data[0];

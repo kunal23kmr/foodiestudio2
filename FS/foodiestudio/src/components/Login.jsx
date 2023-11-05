@@ -41,7 +41,7 @@ function Login() {
         }
 
         
-        axios.post('http://localhost:3001/login', formData)
+        axios.post('http://localhost:5000/login', formData)
             .then(res => {
                 console.log(res)
                 // fun(res.data[0]);
@@ -52,10 +52,7 @@ function Login() {
                     };
                 });
                 alert('Sucessfully Logined!');
-                // fun(true);
                 navigate(`/viewProfile/${res.data[0].user_id}`);
-
-                // console.log('dekho data',res.data[0].user_id)
             })
             .catch(err => {
                 console.log('Error aaya hai :', err);

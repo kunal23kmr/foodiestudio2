@@ -16,7 +16,7 @@ function ViewProfile() {
 
     useEffect(() => {
         // Use a GET request to retrieve user profile data based on the route parameter
-        axios.get(`http://localhost:3001/viewProfile/${id}`)
+        axios.get(`http://localhost:5000/viewProfile/${id}`)
             .then(res => {
                 console.log(res);
                 const profile = res.data[0];
