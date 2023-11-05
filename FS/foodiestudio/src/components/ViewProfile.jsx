@@ -35,7 +35,7 @@ function ViewProfile() {
     }, [id]); // Use id as a dependency to trigger the request when the parameter changes
 
     return (
-        <div>
+        <div id="Profile-container">
             <h1>View Profile</h1>
             <p>First Name: {user.first_name}</p>
             <p>Last Name: {user.last_name}</p>

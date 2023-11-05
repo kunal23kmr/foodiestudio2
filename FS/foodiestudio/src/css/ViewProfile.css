@@ -1,1 +1,34 @@
-/* some thing */
+/* Style the container */
+#Profile-container {
+    background-color: #f7f7f7;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Style the heading */z
+  h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+  
+  /* Style the individual profile fields */
+  p {
+    font-size: 16px;
+    margin: 10px 0;
+    text-transform: capitalize;
+  }
+  
+  /* Add a hover effect to the container */
+  div:hover {
+    transform: scale(1.02);
+    transition: transform 0.2s ease-in-out;
+  }
+  
