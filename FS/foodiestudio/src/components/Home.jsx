@@ -15,23 +15,27 @@ function Home() {
 
   return (
     <div className="contanior">
-      <br />
-      <br />
-      <br />
-      <br />
-      <h1>Welcome to FoodieStudio</h1><br /><br />
-      <h2>
-        Browse your Favorite food from your Favorite Restaurants
-      </h2><br />
-      <div className="food-cards">
-        {foodItems.map((item) => (
-          <div key={item.id} className="food-card">
-            <img className='image_card' src={process.env.PUBLIC_URL + item.image} alt={item.title} />
-            <h3>{item.title}</h3>
-            <p>By: {item.restaurant}</p>
-            <button onClick={() => showDetails(item.id)}>View Details</button>
+      <div className="home">
+        <br />
+        <br />
+        <br />
+        <br />
+        <h1 className="heading-1">Welcome to FoodieStudio</h1><br /><br />
+        <div className="box">
+          <div className="heading-2">
+            Browse your Favorite food from your Favorite Restaurants
+          </div><br />
+          <div className="food-cards">
+            {foodItems.map((item) => (
+              <div key={item.id} className="food-card">
+                <img className='image_card' src={process.env.PUBLIC_URL + item.image} alt={item.title} />
+                <h3 className="item-name">{item.title}</h3>
+                <p className="resturant-name">By: {item.restaurant}</p>
+                <button onClick={() => showDetails(item.id)}>View Details</button>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
     </div>
   );

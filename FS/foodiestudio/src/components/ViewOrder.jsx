@@ -52,7 +52,6 @@ export default function ViewOrder() {
                     <h1>Your Cart is empty.</h1>
                 </div>
             )}
-            <button onClick={() => handleClick()}>Order</button>
         </div>
     );
 }

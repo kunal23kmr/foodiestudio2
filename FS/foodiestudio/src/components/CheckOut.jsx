@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import foodItems from './foodItems';
+import { useNavigate } from 'react-router-dom';
 
 export default function CheckOut() {
     const [total, setTotal] = useState(0);
     const [itemList, setItemList] = useState([]);
+    const navigate = useNavigate();
 
     const handleClick = () => {
         console.log('clicked.')
@@ -13,6 +15,7 @@ export default function CheckOut() {
                 alert('Order Sucessfully.!');
                 setItemList([]);
                 setTotal(0);
+                navigate('/')
             }).catch(err => {
                 console.log('error aaya post krne me:', err);
             })
@@ -46,7 +49,7 @@ export default function CheckOut() {
         <div className='contanier'>
             <h1>Payment Page</h1>
             <p>{`Total Payable: ${total}`}</p>
-            <button onClick={handleClick}>Place order</button>
+            <button className='btn' onClick={handleClick}>Place order</button>
         </div>
     );
 }

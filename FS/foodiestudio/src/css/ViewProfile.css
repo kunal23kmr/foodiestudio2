@@ -8,7 +8,7 @@
     padding: 20px;
     width: 800px;
     height: 500px;
-    margin: 0 auto;
+    margin: 3rem auto;
     font-family: Arial, sans-serif;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
@@ -21,6 +21,8 @@
     text-transform: uppercase;
   }
   
+
+
   /* Style the individual profile fields */
   p {
     font-size: 25px;
@@ -28,3 +30,13 @@
     text-transform: capitalize;
   }
   
+
+  .field{
+    font-size: 16px;
+  }
+
+  .cnt{
+    width: 840px;
+    margin: 0 auto;
+
+  }

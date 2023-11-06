@@ -54,16 +54,17 @@ function ViewProfile() {
         <div className="contanier">
             <div id="profile-container">
                 <h1>View Profile</h1>
-                <p>Name: {user.first_name} {user.last_name}</p>
-                <p>Phone Number: {user.phone_number}</p><br />
-                <p>---Address---</p><br />
-                <p>City: {user.city}</p>
-                <p>State: {user.state}</p>
-                <p>Country: {user.country}</p>
+                <hr />
+                <p className="field">Name: {user.first_name} {user.last_name}</p>
+                <p className="field">Phone Number: {user.phone_number}</p><br />
+                <h3 className="addr">Address:</h3><hr />
+                <p className="field">City: {user.city}</p>
+                <p className="field">State: {user.state}</p>
+                <p className="field">Country: {user.country}</p>
             </div>
-            <div>
-                <button onClick={vieworder}>View Your Order</button>
-                <button onClick={logout}>Logout</button>
+            <div className="cnt">
+                <button className="btn" onClick={vieworder}>View Your Order</button>
+                <button className="btn" onClick={logout}>Logout</button>
             </div>
         </div>
     );

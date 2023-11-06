@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import foodItems from './foodItems';
 import { useNavigate } from 'react-router';
 import axios from 'axios';
+import '../css/Cart.css';
 
 
 export default function Cart() {
@@ -54,7 +55,7 @@ export default function Cart() {
                     <h1>Your Cart is empty.</h1>
                 </div>
             )}
-            <button onClick={() => handleClick()}>Order</button>
+            <button className='btn cart' onClick={() => handleClick()}>Order</button>
         </div>
     );
 }

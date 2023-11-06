@@ -32,7 +32,7 @@ const foodItems = [
         description: 'Description of Food Item 3.',
         restaurant: 'Swadeshi Bhog',
         image: image6,
-        price: '$20',
+        price: '20',
     },
     {
         id: 4,
