@@ -35,7 +35,7 @@ export default function SingleBlog() {
 
     console.log(item);
     return (
-        <>
+        <div className='contanier'>
             {item ?
                 <div className='found'>
                     <div className="details">
@@ -53,6 +53,6 @@ export default function SingleBlog() {
                     <h1>Item Not Found.</h1>
                 </div>
             }
-        </>
+        </div>
     )
 }

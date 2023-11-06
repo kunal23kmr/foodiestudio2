@@ -15,25 +15,30 @@ import SingleBlog from './components/SingleBlog';
 import CheckOut from './components/CheckOut';
 import Cart from './components/Cart';
 import ViewOrder from './components/ViewOrder';
+import Footer from './components/Footer';
 
 function App() {
-  return (<>
-    <Navbar />
-    <Routes>
-      <Route path='/' element={<Home />} />
-      <Route path='/blog' element={<Blog />} />
-      <Route path='/contact' element={<Contact />} />
-      <Route path='/about' element={<About />} />
-      <Route path='/profile' element={<Profile />} />
-      <Route path='/viewProfile/:id' element={<ViewProfile />} />
-      <Route path='/login' element={<Login />} />
-      <Route path='/signup' element={<Signup />} />
-      <Route path='/singleBlog/:id' element={<SingleBlog />} />
-      <Route path='/checkOut' element={<CheckOut />} />
-      <Route path='/cart' element={<Cart />} />
-      <Route path='/viewOrder' element={<ViewOrder />} />
-    </Routes>
-  </>
+  return (
+    <div className='wrapper'>
+      <div className='main-container'>
+        <Navbar />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/blog' element={<Blog />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/profile' element={<Profile />} />
+          <Route path='/viewProfile/:id' element={<ViewProfile />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/signup' element={<Signup />} />
+          <Route path='/singleBlog/:id' element={<SingleBlog />} />
+          <Route path='/checkOut' element={<CheckOut />} />
+          <Route path='/cart' element={<Cart />} />
+          <Route path='/viewOrder' element={<ViewOrder />} />
+        </Routes>
+        <Footer />
+      </div>
+    </div>
   );
 }
 

@@ -34,7 +34,7 @@ export default function Cart() {
     }
 
     return (
-        <div>
+        <div className='contanier'>
             {cartList && cartList.length > 0 ? (
                 cartList.map((cartItem) => {
                     const item = foodItems.find((foodItem) => foodItem.id === cartItem.id);

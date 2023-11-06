@@ -4,14 +4,18 @@
     align-items: center;
     background-color: rgb(241, 241, 241);
     width: 400px;
-    margin:  auto;
+    margin: auto;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     padding: 20px;
-    margin-top: 10vh
+    margin-top: 10vh;
+    margin-bottom: 250px;
+    min-height: 90vh;
+
 }
-.phone{
+
+.phone {
     max-width: 93%;
 }
 
@@ -77,12 +81,12 @@ input[type="number"]::-webkit-outer-spin-button {
     margin: 0;
 }
 
-.no_account{
+.no_account {
     margin: 10px;
     text-decoration: none;
 }
 
-.error_msg{
-    color:red;
+.error_msg {
+    color: red;
     margin-bottom: 20px;
 }

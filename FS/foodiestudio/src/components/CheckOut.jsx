@@ -43,7 +43,7 @@ export default function CheckOut() {
 
 
     return (
-        <div>
+        <div className='contanier'>
             <h1>Payment Page</h1>
             <p>{`Total Payable: ${total}`}</p>
             <button onClick={handleClick}>Place order</button>

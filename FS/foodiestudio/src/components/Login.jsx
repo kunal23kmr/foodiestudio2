@@ -40,7 +40,7 @@ function Login() {
             setError({ ...error, mobile_number: 'Invalid phone number!' });
         }
 
-        
+
         axios.post('http://localhost:5000/login', formData)
             .then(res => {
                 console.log(res)
@@ -62,46 +62,47 @@ function Login() {
     }
 
     return (
-        <div className="login-container">
-            <h2>Login</h2>
-            <br></br>
-            <form className="login-form" onSubmit={handleSubmit}>
-                <label htmlFor="phone">Phone Number</label>
-                <input className='phone'
-                    id='mobile_number'
-                    name='mobile_number'
-                    type="text"
-                    placeholder="Phone Number"
-                    inputMode="numeric"
-                    value={formData.mobile_number}
-                    onChange={handleChange}
-                    required autoFocus />
-                <span className='error_msg'>{error.mobile_number}</span>
-
-                <div className="password-container" required>
-                    <label htmlFor="password_login">Password</label>
-
-                    <input
-                        id='password_login'
-                        name='password'
-                        type={showPassword ? "text" : "password"}
-                        placeholder="Password"
-                        value={formData.password}
+        <div className='contanier'>
+            <div className="login-container">
+                <h2>Login</h2>
+                <br></br>
+                <form className="login-form" onSubmit={handleSubmit}>
+                    <label htmlFor="phone">Phone Number</label>
+                    <input className='phone'
+                        id='mobile_number'
+                        name='mobile_number'
+                        type="text"
+                        placeholder="Phone Number"
+                        inputMode="numeric"
+                        value={formData.mobile_number}
                         onChange={handleChange}
-                        required
-                    />
-                    <span
-                        className={`eye-icon ${showPassword ? "show" : ""}`}
-                        onClick={togglePasswordVisibility}
-                    >show
-                    </span>
-                </div>
-                <span className='error_msg'>{error.password}</span>
+                        required autoFocus />
+                    <span className='error_msg'>{error.mobile_number}</span>
 
-                <button type='submit' className="login-button">Login</button>
-            </form>
-            <Link to={'/signup'} className='no_account'>Not have an account? Signup</Link>
-        </div>
+                    <div className="password-container" required>
+                        <label htmlFor="password_login">Password</label>
+
+                        <input
+                            id='password_login'
+                            name='password'
+                            type={showPassword ? "text" : "password"}
+                            placeholder="Password"
+                            value={formData.password}
+                            onChange={handleChange}
+                            required
+                        />
+                        <span
+                            className={`eye-icon ${showPassword ? "show" : ""}`}
+                            onClick={togglePasswordVisibility}
+                        >show
+                        </span>
+                    </div>
+                    <span className='error_msg'>{error.password}</span>
+
+                    <button type='submit' className="login-button">Login</button>
+                </form>
+                <Link to={'/signup'} className='no_account'>Not have an account? Signup</Link>
+            </div></div>
     );
 }
 

@@ -62,11 +62,11 @@ function Profile() {
     }, [currUser, navigate]);
 
     return (
-        <>
+        <div className="contanier">
             {currUser === -1 ? (
                 <Login />
             ) : null}
-        </>
+        </div>
     );
 }
 

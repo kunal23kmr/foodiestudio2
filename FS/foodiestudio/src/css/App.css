@@ -3,6 +3,23 @@
     width: .8em;
     margin: 0 5px;
 }
-h1{
+
+h1 {
     color: black;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-container {
+    flex:1;
+    /* width: 100%;
+    min-height: 100vh; */
+}
+
+.contanier{
+    min-height: 80vh;
 }

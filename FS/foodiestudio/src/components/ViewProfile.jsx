@@ -51,7 +51,7 @@ function ViewProfile() {
     }, [id]);
 
     return (
-        <>
+        <div className="contanier">
             <div id="profile-container">
                 <h1>View Profile</h1>
                 <p>Name: {user.first_name} {user.last_name}</p>
@@ -65,7 +65,7 @@ function ViewProfile() {
                 <button onClick={vieworder}>View Your Order</button>
                 <button onClick={logout}>Logout</button>
             </div>
-        </>
+        </div>
     );
 }
 

@@ -99,124 +99,126 @@ const Signup = () => {
     };
     return (
         <>
-            <br />
-            <div className="signup">
-                <h2 className="signup_title">Sign-Up</h2>
+            <div className='contanier'>
                 <br />
-                <form onSubmit={handleSubmit}>
-                    <div className="form-group">
-                        <label htmlFor="first_name">First Name</label>
-                        <input
-                            type="text"
-                            id="first_name"
-                            name="first_name"
-                            value={formData.first_name}
-                            onChange={handleChange}
-                            autoFocus
-                            placeholder="First Name"
-                        />
-                    </div>
-                    <span className="error_msg">{error.first_name}</span>
-
-                    <div className="form-group">
-                        <label htmlFor="last_name">Last Name</label>
-                        <input
-                            type="text"
-                            id="last_name"
-                            name="last_name"
-                            value={formData.last_name}
-                            onChange={handleChange}
-                            placeholder="Last Name"
-                        />
-                    </div>
-                    <span className="error_msg">{error.last_name}</span>
-
-                    <div className="form-group">
-                        <label htmlFor="mobile_number">Phone Number</label>
-                        <input
-                            type="number"
-                            id="mobile_number"
-                            name="mobile_number"
-                            value={formData.mobile_number}
-                            onChange={handleChange}
-                            placeholder="Phone Number"
-                        />
-                    </div>
-                    <span className="error_msg">{error.mobile_number}</span>
-
-                    <p>Address:</p>
-                    <div className="address">
+                <div className="signup">
+                    <h2 className="signup_title">Sign-Up</h2>
+                    <br />
+                    <form onSubmit={handleSubmit}>
                         <div className="form-group">
-                            <label htmlFor="city">City name</label>
+                            <label htmlFor="first_name">First Name</label>
                             <input
                                 type="text"
-                                id="city"
-                                name="city"
-                                value={formData.city}
+                                id="first_name"
+                                name="first_name"
+                                value={formData.first_name}
                                 onChange={handleChange}
-                                placeholder="City"
+                                autoFocus
+                                placeholder="First Name"
                             />
                         </div>
-                        <span className="error_msg">{error.city}</span>
+                        <span className="error_msg">{error.first_name}</span>
 
                         <div className="form-group">
-                            <label htmlFor="state">State</label>
+                            <label htmlFor="last_name">Last Name</label>
                             <input
                                 type="text"
-                                id="state"
-                                name="state"
-                                value={formData.state}
+                                id="last_name"
+                                name="last_name"
+                                value={formData.last_name}
                                 onChange={handleChange}
-                                placeholder="State"
+                                placeholder="Last Name"
                             />
                         </div>
-                        <span className="error_msg">{error.state}</span>
+                        <span className="error_msg">{error.last_name}</span>
 
                         <div className="form-group">
-                            <label htmlFor="country">Country</label>
-                            <input
-                                type="text"
-                                id="country"
-                                name="country"
-                                value={formData.country}
-                                onChange={handleChange}
-                                placeholder="Country"
-                            />
-                        </div>
-                        <span className="error_msg">{error.country}</span>
-
-                        <div className="form-group">
-                            <label htmlFor="pincode">Pin Code</label>
+                            <label htmlFor="mobile_number">Phone Number</label>
                             <input
                                 type="number"
-                                id="pincode"
-                                name="pincode"
-                                value={formData.pincode}
+                                id="mobile_number"
+                                name="mobile_number"
+                                value={formData.mobile_number}
                                 onChange={handleChange}
-                                placeholder="Pin-Code"
+                                placeholder="Phone Number"
                             />
                         </div>
-                        <span className="error_msg">{error.pincode}</span>
-                    </div>
+                        <span className="error_msg">{error.mobile_number}</span>
 
-                    <div className="form-group">
-                        <label htmlFor="password">Password</label>
-                        <input
-                            type="text"
-                            id="password"
-                            name="password"
-                            value={formData.password}
-                            onChange={handleChange}
-                            placeholder="Password"
-                            required
-                        />
-                    </div>
+                        <p>Address:</p>
+                        <div className="address">
+                            <div className="form-group">
+                                <label htmlFor="city">City name</label>
+                                <input
+                                    type="text"
+                                    id="city"
+                                    name="city"
+                                    value={formData.city}
+                                    onChange={handleChange}
+                                    placeholder="City"
+                                />
+                            </div>
+                            <span className="error_msg">{error.city}</span>
 
-                    <button type="submit">Sign Up</button>
-                </form>
-                <Link to={'/login'} className="already_account">
-                    Already have an account? Login
-                </Link>
+                            <div className="form-group">
+                                <label htmlFor="state">State</label>
+                                <input
+                                    type="text"
+                                    id="state"
+                                    name="state"
+                                    value={formData.state}
+                                    onChange={handleChange}
+                                    placeholder="State"
+                                />
+                            </div>
+                            <span className="error_msg">{error.state}</span>
+
+                            <div className="form-group">
+                                <label htmlFor="country">Country</label>
+                                <input
+                                    type="text"
+                                    id="country"
+                                    name="country"
+                                    value={formData.country}
+                                    onChange={handleChange}
+                                    placeholder="Country"
+                                />
+                            </div>
+                            <span className="error_msg">{error.country}</span>
+
+                            <div className="form-group">
+                                <label htmlFor="pincode">Pin Code</label>
+                                <input
+                                    type="number"
+                                    id="pincode"
+                                    name="pincode"
+                                    value={formData.pincode}
+                                    onChange={handleChange}
+                                    placeholder="Pin-Code"
+                                />
+                            </div>
+                            <span className="error_msg">{error.pincode}</span>
+                        </div>
+
+                        <div className="form-group">
+                            <label htmlFor="password">Password</label>
+                            <input
+                                type="text"
+                                id="password"
+                                name="password"
+                                value={formData.password}
+                                onChange={handleChange}
+                                placeholder="Password"
+                                required
+                            />
+                        </div>
+
+                        <button type="submit">Sign Up</button>
+                    </form>
+                    <Link to={'/login'} className="already_account">
+                        Already have an account? Login
+                    </Link>
+                </div>
             </div>
         </>
     );

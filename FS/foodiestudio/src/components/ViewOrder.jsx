@@ -26,7 +26,7 @@ export default function ViewOrder() {
     }
 
     return (
-        <div>
+        <div className='contanier'>
             <h1>Your Orders.</h1>
             <br />
             <hr />
