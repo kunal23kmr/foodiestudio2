@@ -14,7 +14,7 @@ const foodItems = [
         id: 1,
         title: 'Rasgulla',
         description: "Rasgulla is a popular Indian dessert made from freshly prepared cottage cheese balls soaked in a sugar syrup.These soft and spongy sweets are loved for their melt-in -the mouth texture and subtle sweetness.They are often garnished with saffron strands and enjoyed on various occasions and celebrations.",
-        restaurant: 'Kunal da Dhaba',
+        restaurant: 'Narangi da Dhaba',
         image: image1,
         price: '10',
         recipe: {

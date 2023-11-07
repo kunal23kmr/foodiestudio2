@@ -25,7 +25,7 @@ export default function Cart() {
             .catch(err => {
                 console.log('Error aaya hai pro:', err);
             });
-    }, []); // Pass an empty dependency array to run this effect only on component mount
+    }, []);
 
     const handleClick = () => {
         if (cartList.length>0) {
