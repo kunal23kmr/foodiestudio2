@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import foodItems from './foodItems';
 import axios from 'axios';
+// import '../css/SingleBlog.css'
 
 export default function SingleBlog() {
     const { id } = useParams();

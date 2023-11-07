@@ -3,6 +3,7 @@ import foodItems from './foodItems';
 import { useNavigate } from 'react-router';
 import axios from 'axios';
 import '../css/Cart.css';
+import FoodCard from './FoodCard';
 
 
 export default function Cart() {
@@ -39,16 +40,17 @@ export default function Cart() {
             {cartList && cartList.length > 0 ? (
                 cartList.map((cartItem) => {
                     const item = foodItems.find((foodItem) => foodItem.id === cartItem.id);
+
+                    // Check if 'item' is defined before accessing its properties
                     if (item) {
                         return (
-                            <div key={item.id}>
-                                <h2>{item.title}</h2>
-                                <img id="image_show" src={process.env.PUBLIC_URL + item.image} alt={item.title} />
-                                <p>Restaurant: {item.restaurant}</p>
-                                <p>Price: {item.price}</p>
+                            <div>
+                                <FoodCard key={item.id} item={item} status='' />
                             </div>
                         );
                     }
+
+                    return null; // Return null for any undefined items
                 })
             ) : (
                 <div>

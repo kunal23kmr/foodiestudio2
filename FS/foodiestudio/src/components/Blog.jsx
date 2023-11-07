@@ -1,9 +1,15 @@
 import React from "react";
+import foodItems from "./foodItems";
+import FoodCard from "./FoodCard";
 
 function Blog() {
     return <>
         <div className="contanier">
-            <h2>Blog</h2>
+            <div>
+                {foodItems.map((item) => (
+                    <FoodCard key={item.id} item={item} />
+                ))}
+            </div>
         </div>
     </>
 }

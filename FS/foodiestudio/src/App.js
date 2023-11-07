@@ -16,6 +16,7 @@ import CheckOut from './components/CheckOut';
 import Cart from './components/Cart';
 import ViewOrder from './components/ViewOrder';
 import Footer from './components/Footer';
+import ViewBlog from './components/ViewBlog';
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
           <Route path='/checkOut' element={<CheckOut />} />
           <Route path='/cart' element={<Cart />} />
           <Route path='/viewOrder' element={<ViewOrder />} />
+          <Route path='/viewBlog/:id' element={<ViewBlog />} />
         </Routes>
         <Footer />
       </div>
